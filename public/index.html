@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset = "UTF-8">
+  	<title></title>
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+  	<script type="module" src="js/OrbitControls.js"></script>
+  	<script type="module" src="js/GLTFLoader.js"></script>
+  	<script type="module" src="js/script.js"></script>
+    <div class="controls">
+      <div id="js-tray" class="tray">
+        <div id="js-slide" class="tray__slide"></div>
+      </div>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="myFile" />
+        <p>Lade hier ein weiteres Modell hoch!<br>
+          (nur .zip-Dateien)</p>
+        <input type="submit" value="Hochladen"/>
+      </form>
+      <p> Wähle einen Teil des Modells aus und färbe ihn ein!</p>
+      <button id="js-next" class="tray__next">nächstes 3D-Modell</button>
+
+    </div>
+  </body>
+</html>

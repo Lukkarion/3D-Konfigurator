@@ -1,0 +1,101 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444444;
+}
+* {
+  touch-action: manipulation;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tray {
+  width: 50%;
+  height: 50px;
+  position: relative;
+  overflow-x: hidden;
+  display: inline-block;
+}
+.tray__slide {
+  position: absolute;
+  display: flex;
+  left: 0;
+  transform: translateX(-50%);
+  animation: wheelin 1s 2s ease-in-out forwards;
+}
+.tray__picker {
+  transition: 0.1s ease-in;
+  height: 50px;
+  min-width: 50px;
+  flex: 1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center;
+}
+.tray__picker:nth-child(5n+5) {
+  margin-right: 20px;
+}
+
+.tray__next {
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444444;
+}
+
+p {
+  padding-left: 10px;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  float: right;
+}
+
+input {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444444;
+}
+
+input[type=file] {
+  height: 50px;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type=submit]{
+  margin: 10px;
+}
+
+@keyframes wheelin {
+  to {
+    transform: translateX(0);
+  }
+}
