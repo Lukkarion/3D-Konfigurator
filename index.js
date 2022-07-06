@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const extract = require('extract-zip')
-const formidable = require('formidable');
 const path = require('path');
 const fileUpload = require("express-fileupload");
 
@@ -50,15 +49,15 @@ const getDirectories = (path) => {
 server.use(express.static('public'));
 server.use(fileUpload());
 
-server.get("/", (req, res) => {
+server.get("/konfigurator", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-server.get("/models", (req, res) => {
+server.get("/konfigurator/models", (req, res) => {
   return res.status(200).send(getDirectories(__dirname + "/public/obj/"));
 });
 
-server.post("/upload", (req, res) => {
+server.post("/konfigurator/upload", (req, res) => {
   if (!req.files) {
     return res.status(400).send("No files were uploaded.");
   }
@@ -77,7 +76,7 @@ server.post("/upload", (req, res) => {
     if (err) {
       return res.status(500).send(err);
     }
-    res.redirect('/');
+    res.redirect('/konfigurator');
   });
 
   extractZip(dirPath, dirPath + "_extract", true);

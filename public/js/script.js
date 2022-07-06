@@ -46,13 +46,13 @@ var loader = new GLTFLoader();
 document.getElementById('js-next').addEventListener("click", nextModel);
 
 var i = 0;
-var models = JSON.parse(httpGet('/models'));
+var models = JSON.parse(httpGet('/konfigurator/models'));
 var obj = scene.getObjectByName(models[i]);
 function nextModel() {
   if (obj !== undefined) {
     scene.remove(obj);
   }
-  var dest = `../obj/${models[i++]}/scene.gltf`;
+  var dest = `./obj/${models[i++]}/scene.gltf`;
   loader.load(dest, function( gltf ){
     obj = gltf.scene;
     obj.name = models[i];
