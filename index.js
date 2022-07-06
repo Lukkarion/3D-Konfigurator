@@ -49,15 +49,15 @@ const getDirectories = (path) => {
 server.use(express.static('public'));
 server.use(fileUpload());
 
-server.get("/konfigurator", (req, res) => {
+server.get("/3d-Konfigurator", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-server.get("/konfigurator/models", (req, res) => {
+server.get("/3d-Konfigurator/models", (req, res) => {
   return res.status(200).send(getDirectories(__dirname + "/public/obj/"));
 });
 
-server.post("/konfigurator/upload", (req, res) => {
+server.post("/3d-Konfigurator/upload", (req, res) => {
   if (!req.files) {
     return res.status(400).send("No files were uploaded.");
   }
@@ -76,7 +76,7 @@ server.post("/konfigurator/upload", (req, res) => {
     if (err) {
       return res.status(500).send(err);
     }
-    res.redirect('/konfigurator');
+    res.redirect('/3d-Konfigurator');
   });
 
   extractZip(dirPath, dirPath + "_extract", true);
