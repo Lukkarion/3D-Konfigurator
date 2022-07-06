@@ -46,7 +46,7 @@ var loader = new GLTFLoader();
 document.getElementById('js-next').addEventListener("click", nextModel);
 
 var i = 0;
-var models = JSON.parse(httpGet('/konfigurator/models'));
+var models = JSON.parse(httpGet('./models'));
 var obj = scene.getObjectByName(models[i]);
 function nextModel() {
   if (obj !== undefined) {

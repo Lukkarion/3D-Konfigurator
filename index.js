@@ -82,6 +82,6 @@ server.post("/3d-Konfigurator/upload", (req, res) => {
   extractZip(dirPath, dirPath + "_extract", true);
 });
 
-server.listen(8080, (err) => {
+server.listen(8000, (err) => {
   if (err) throw err;
 });
